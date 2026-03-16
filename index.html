@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Unity中国开发挑战赛 - 团结有AI 游我精彩</title>
+    <meta name="description" content="2026 Unity中国开发挑战赛官方赛事网站，团结有AI，游我精彩。超百万奖金池，三大赛道等你来挑战！">
+    <meta name="keywords" content="Unity, 开发挑战赛, 游戏开发, AI, 团结引擎, 赛事">
+    
+    <!-- 引入字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 引入CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    
+    <!-- 引入动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="assets/images/logo.png" alt="Unity 2026 Logo" class="logo-img">
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#overview" class="nav-link">赛事概览</a></li>
+                <li><a href="#tracks" class="nav-link">赛道设置</a></li>
+                <li><a href="#awards" class="nav-link">奖项设置</a></li>
+                <li><a href="#schedule" class="nav-link">赛事日程</a></li>
+                <li><a href="#judges" class="nav-link">评审阵容</a></li>
+                <li><a href="#resources" class="nav-link">资源支持</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="register-btn" onclick="showRegisterModal()">立即报名</button>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-list">
+            <li><a href="#overview" class="mobile-nav-link">赛事概览</a></li>
+            <li><a href="#tracks" class="mobile-nav-link">赛道设置</a></li>
+            <li><a href="#awards" class="mobile-nav-link">奖项设置</a></li>
+            <li><a href="#schedule" class="mobile-nav-link">赛事日程</a></li>
+            <li><a href="#judges" class="mobile-nav-link">评审阵容</a></li>
+            <li><a href="#resources" class="mobile-nav-link">资源支持</a></li>
+            <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero首屏 -->
+    <section class="hero" id="hero">
+        <div class="particles-canvas" id="particlesCanvas"></div>
+        <div class="hero-content">
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-container">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="hero-title">
+                        <span class="title-line">2026</span>
+                        <span class="title-line">Unity中国开发挑战赛</span>
+                    </h1>
+                    <p class="hero-subtitle">团结有AI 游我精彩</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="100W+">0</span>
+                            <span class="stat-unit">总奖金池</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-unit">核心赛道</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50+">0</span>
+                            <span class="stat-unit">合作伙伴</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showRegisterModal()">
+                            <span>立即报名</span>
+                            <i class="btn-icon">→</i>
+                        </button>
+                        <button class="btn btn-outline" onclick="downloadHandbook()">
+                            <span>下载赛事手册</span>
+                            <i class="btn-icon">↓</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="hero-3d-element">
+                        <div class="cube-container">
+                            <video class="cube-video" autoplay loop muted playsinline>
+                                <source src="assets/videos/motion_cube.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="neural-network">
+                            <svg class="network-svg" viewBox="0 0 400 400">
+                                <!-- 神经网络连线 -->
+                                <g class="network-lines"></g>
+                                <g class="network-nodes"></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">滑动查看赛事详情</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事概览 -->
+    <section class="overview" id="overview">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">赛事概览</h2>
+                <p class="section-subtitle">探索AI+游戏的无限可能，开启游戏开发新纪元</p>
+            </div>
+            
+            <div class="overview-intro" data-aos="fade-up" data-aos-delay="100">
+                <div class="intro-card glass-card">
+                    <div class="intro-content">
+                        <p>本届大赛在中国音像与数字出版协会游戏出版工作委员会的指导下，由Unity中国与上海市徐汇区文化和旅游局联合主办。作为Unity中国官方年度赛事，大赛以"团结有AI，游我精彩"为主题，设立超百万元奖金池，并联合广大生态伙伴，为广大游戏开发者提供丰富支持资源，发掘和培养中国实时3D内容创作新生力量。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-highlights">
+                <div class="highlight-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 16 L32 48 M20 28 L32 16 L44 28" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>超百万奖金</h3>
+                    <p>丰厚奖池等你挑战</p>
+                </div>
+                <div class="highlight-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 20 L20 32 L32 44 L44 32 L32 20" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>权威专家</h3>
+                    <p>行业大咖专业评审</p>
+                </div>
+                <div class="highlight-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <rect x="16" y="16" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="36" y="16" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="16" y="36" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="36" y="36" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>三大赛道</h3>
+                    <p>多维度展示创意才华</p>
+                </div>
+                <div class="highlight-card glass-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>海量资源</h3>
+                    <p>全方位助力开发者成长</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛道设置 -->
+    <section class="tracks" id="tracks">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">赛道设置</h2>
+                <p class="section-subtitle">三大核心赛道，展现无限创意</p>
+            </div>
+
+            <div class="tracks-grid">
+                <!-- 小游戏赛道 -->
+                <div class="track-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="track-card-inner">
+                        <div class="track-card-front">
+                            <div class="track-icon">
+                                <svg viewBox="0 0 64 64">
+                                    <rect x="8" y="8" width="48" height="48" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="20" cy="20" r="4" fill="currentColor"/>
+                                    <circle cx="44" cy="20" r="4" fill="currentColor"/>
+                                    <path d="M20 40 Q32 48 44 40" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            <h3>小游戏</h3>
+                            <p>轻量级创意游戏开发</p>
+                            <div class="track-tags">
+                                <span class="tag">创意</span>
+                                <span class="tag">轻量</span>
+                                <span class="tag">低门槛</span>
+                            </div>
+                        </div>
+                        <div class="track-card-back">
+                            <h4>技术要求</h4>
+                            <ul>
+                                <li>使用团结引擎开发</li>
+                                <li>支持抖音/微信/快手/TapTap等小游戏平台</li>
+                                <li>鼓励使用团结引擎AI小游戏创作平台</li>
+                            </ul>
+                            <div class="track-cta">
+                                <button class="track-btn">了解详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 移动端游戏赛道 -->
+                <div class="track-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="track-card-inner">
+                        <div class="track-card-front">
+                            <div class="track-icon">
+                                <svg viewBox="0 0 64 64">
+                                    <rect x="12" y="6" width="40" height="52" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="28" y1="52" x2="36" y2="52" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="32" cy="24" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            <h3>移动端游戏</h3>
+                            <p>移动平台游戏开发</p>
+                            <div class="track-tags">
+                                <span class="tag">鸿蒙</span>
+                                <span class="tag">iOS</span>
+                                <span class="tag">Android</span>
+                            </div>
+                        </div>
+                        <div class="track-card-back">
+                            <h4>技术要求</h4>
+                            <ul>
+                                <li>使用团结引擎开发</li>
+                                <li>适配主流设备分辨率</li>
+                                <li>优化性能和内存占用</li>
+                                <li>适配鸿蒙系统优先</li>
+                            </ul>
+                            <div class="track-cta">
+                                <button class="track-btn">了解详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PC端游戏赛道 -->
+                <div class="track-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="track-card-inner">
+                        <div class="track-card-front">
+                            <div class="track-icon">
+                                <svg viewBox="0 0 64 64">
+                                    <rect x="4" y="8" width="56" height="36" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="20" y="48" width="24" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="8" y1="56" x2="56" y2="56" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>PC端游戏</h3>
+                            <p>桌面平台游戏开发</p>
+                            <div class="track-tags">
+                                <span class="tag">PC</span>
+                                <span class="tag">高性能</span>
+                            </div>
+                        </div>
+                        <div class="track-card-back">
+                            <h4>技术要求</h4>
+                            <ul>
+                                <li>推荐适配Windows平台</li>
+                                <li>使用团结引擎开发</li>
+                                <li>支持高画质渲染</li>
+                                <li>适配主流配置</li>
+                            </ul>
+                            <div class="track-cta">
+                                <button class="track-btn">了解详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 奖项设置 -->
+    <section class="awards" id="awards">
+        <div class="section-bg">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">奖项设置</h2>
+                <p class="section-subtitle">超百万奖金池，等你挑战</p>
+            </div>
+
+            <div class="awards-pyramid">
+                <!-- 金耀奖 -->
+                <div class="award-tier tier-gold" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="award-tier-header">
+                        <div class="award-cup">🏆</div>
+                        <h3>徐汇·金耀奖</h3>
+                    </div>
+                    <div class="award-tier-content">
+                        <div class="award-prize">
+                            <span class="prize-amount">¥200,000</span>
+                            <span class="prize-count">× 4</span>
+                        </div>
+                        <p class="award-desc">各赛道最高荣誉奖项</p>
+                        <div class="award-tracks">
+                            <span class="track-badge">小游戏</span>
+                            <span class="track-badge">移动端游戏</span>
+                            <span class="track-badge">PC端游戏</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二层级奖项 -->
+                <div class="awards-row">
+                    <div class="award-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="award-icon">🌟</div>
+                        <h4>AI小游戏平台奖</h4>
+                        <div class="award-prize">
+                            <span class="prize-amount">¥30,000</span>
+                            <span class="prize-count">× 1</span>
+                        </div>
+                        <p class="award-track">小游戏赛道</p>
+                    </div>
+                    <div class="award-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="award-icon">⚡</div>
+                        <h4>最佳鸿蒙性能奖</h4>
+                        <div class="award-prize">
+                            <span class="prize-amount">¥30,000</span>
+                            <span class="prize-count">× 1</span>
+                        </div>
+                        <p class="award-track">移动端游戏赛道</p>
+                    </div>
+                    <div class="award-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="award-icon">🔧</div>
+                        <h4>最佳AI玩法创意奖</h4>
+                        <div class="award-prize">
+                            <span class="prize-amount">¥30,000</span>
+                            <span class="prize-count">× 1</span>
+                        </div>
+                        <p class="award-track">PC端游戏赛道</p>
+                    </div>
+                </div>
+
+                <!-- 第三层级奖项 -->
+                <div class="awards-row">
+                    <div class="award-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="award-icon">🤖</div>
+                        <h4>最佳Codely应用奖</h4>
+                        <div class="award-prize">
+                            <span class="prize-amount">¥30,000</span>
+                            <span class="prize-count">× 3</span>
+                        </div>
+                        <p class="award-track">全赛道</p>
+                    </div>
+                    <div class="award-card glass-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="award-icon">🎓</div>
+                        <h4>高校新星奖</h4>
+                        <div class="award-prize">
+                            <span class="prize-amount">¥5,000</span>
+                            <span class="prize-count">× 9</span>
+                        </div>
+                        <p class="award-track">全赛道</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 非现金奖励 -->
+            <div class="non-cash-awards" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="non-cash-title">🎁 更多权益</h3>
+                <div class="non-cash-grid">
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">🏛️</div>
+                        <h4>政策支持</h4>
+                        <p>最高300万元徐汇区文创产业专项资金</p>
+                    </div>
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">🏢</div>
+                        <h4>孵化器入驻</h4>
+                        <p>Unity中国孵化器优先入驻权</p>
+                    </div>
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">🏠</div>
+                        <h4>办公空间</h4>
+                        <p>优质办公空间首年免租优惠</p>
+                    </div>
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">💰</div>
+                        <h4>投资对接</h4>
+                        <p>顶级投资机构项目投资对接</p>
+                    </div>
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">🚀</div>
+                        <h4>发行支持</h4>
+                        <p>全方位发行支持与渠道对接</p>
+                    </div>
+                    <div class="non-cash-item glass-card">
+                        <div class="non-cash-icon">📢</div>
+                        <h4>流量曝光</h4>
+                        <p>千万级流量曝光与媒体宣传</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事日程 -->
+    <section class="schedule" id="schedule">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">赛事日程</h2>
+                <p class="section-subtitle">从启程到加冕，重要节点不错过</p>
+            </div>
+
+            <div class="timeline-vertical">
+                <div class="timeline-item-vertical" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-dot completed"></div>
+                    <div class="timeline-date">8月1日 - 10月31日</div>
+                    <div class="timeline-content">
+                        <h4>作品征集期</h4>
+                        <p>开放报名通道，参赛者提交作品和报名信息</p>
+                        <div class="timeline-details">
+                            <span class="detail-item">📝 在线报名</span>
+                            <span class="detail-item">📤 作品提交</span>
+                            <span class="detail-item">💬 技术咨询</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-vertical" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">11月1日 - 11月20日</div>
+                    <div class="timeline-content">
+                        <h4>专业评审期</h4>
+                        <p>专家评审团对提交作品进行专业评审</p>
+                        <div class="timeline-details">
+                            <span class="detail-item">👨‍⚖️ 专家评审</span>
+                            <span class="detail-item">🔍 技术评估</span>
+                            <span class="detail-item">📊 评分汇总</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-vertical" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">11月10日 - 11月30日</div>
+                    <div class="timeline-content">
+                        <h4>网络评选期</h4>
+                        <p>优秀作品上线展示，公众参与投票评选</p>
+                        <div class="timeline-details">
+                            <span class="detail-item">🌐 线上展示</span>
+                            <span class="detail-item">👍 公众投票</span>
+                            <span class="detail-item">📱 社交传播</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-vertical" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-date">12月中旬</div>
+                    <div class="timeline-content">
+                        <h4>决赛与颁奖典礼</h4>
+                        <p>入围团队线下决赛，现场颁奖</p>
+                        <div class="timeline-details">
+                            <span class="detail-item">🎯 线下决赛</span>
+                            <span class="detail-item">🏆 颁奖典礼</span>
+                            <span class="detail-item">🎉 庆典活动</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评审阵容 -->
+    <section class="judges" id="judges">
+        <div class="section-bg">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">评审阵容</h2>
+                <p class="section-subtitle">行业顶尖专家，专业评审团队</p>
+            </div>
+
+            <div class="judges-grid">
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="judge-avatar">
+                        <img src="assets/images/左瑞文.png" alt="左瑞文" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">左瑞文</h4>
+                    <p class="judge-title">Unity中国团结引擎<br>技术负责人</p>
+                    <div class="judge-tags">
+                        <span class="tag">技术评审</span>
+                        <span class="tag">游戏架构</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="judge-avatar">
+                        <img src="assets/images/王巍.png" alt="王巍" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">王巍</h4>
+                    <p class="judge-title">Unity中国发行负责人</p>
+                    <div class="judge-tags">
+                        <span class="tag">游戏设计</span>
+                        <span class="tag">商业价值</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="judge-avatar">
+                        <img src="assets/images/顾申华.png" alt="顾申华" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">顾申华</h4>
+                    <p class="judge-title">Unity中国技术总监</p>
+                    <div class="judge-tags">
+                        <span class="tag">AI应用</span>
+                        <span class="tag">平台移植</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="judge-avatar">
+                        <img src="assets/images/林翰.png" alt="林翰" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">林翰</h4>
+                    <p class="judge-title">Unity中国美术总监</p>
+                    <div class="judge-tags">
+                        <span class="tag">美术评审</span>
+                        <span class="tag">视觉设计</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="judge-avatar">
+                        <img src="assets/images/杨栋.png" alt="杨栋" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">杨栋</h4>
+                    <p class="judge-title">Unity中国平台技术总监</p>
+                    <div class="judge-tags">
+                        <span class="tag">创新评审</span>
+                        <span class="tag">AI应用</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="judge-avatar">
+                        <img src="assets/images/熊拖泥.png" alt="熊拖泥" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">熊拖泥</h4>
+                    <p class="judge-title">独立之光副总裁</p>
+                    <div class="judge-tags">
+                        <span class="tag">独立游戏</span>
+                        <span class="tag">玩法创意</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="judge-avatar">
+                        <img src="assets/images/叶千落.png" alt="叶千落" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">叶千落</h4>
+                    <p class="judge-title">Gamirror Games CEO</p>
+                    <div class="judge-tags">
+                        <span class="tag">独立游戏</span>
+                        <span class="tag">玩法创意</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="judge-avatar">
+                        <img src="assets/images/jason yang.png" alt="jason yang" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">Jason Yang</h4>
+                    <p class="judge-title">Veewo Games CEO</p>
+                    <div class="judge-tags">
+                        <span class="tag">独立游戏</span>
+                        <span class="tag">玩法创意</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="judge-avatar">
+                        <img src="assets/images/陈振.png" alt="陈振" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">陈振</h4>
+                    <p class="judge-title">知乎知名答主<br>《山河旅探》联合制作人</p>
+                    <div class="judge-tags">
+                        <span class="tag">独立游戏</span>
+                        <span class="tag">玩法创意</span>
+                    </div>
+                </div>
+
+                <div class="judge-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="judge-avatar">
+                        <img src="assets/images/熊拖泥.png" alt="熊拖泥" class="judge-avatar-img">
+                    </div>
+                    <h4 class="judge-name">熊拖泥</h4>
+                    <p class="judge-title">独立之光副总裁</p>
+                    <div class="judge-tags">
+                        <span class="tag">独立游戏</span>
+                        <span class="tag">玩法创意</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+    <!-- 工具资源支持 -->
+    <section class="resources" id="resources">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">开发工具包</h2>
+                <p class="section-subtitle">开发资源助力，加速创作之路</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card glass-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="resource-icon">
+                        <svg viewBox="0 0 64 64">
+                            <rect x="8" y="8" width="48" height="48" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 32 L28 40 L44 24" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>AI工具包</h3>
+                    <p class="resource-desc">Codely Token、AI小游戏平台内测名额等AI工具支持</p>
+                    <div class="resource-value">价值：¥50,000+</div>
+                    <button class="resource-btn">查看详情</button>
+                </div>
+
+                <div class="resource-card glass-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="resource-icon">
+                        <svg viewBox="0 0 64 64">
+                            <ellipse cx="32" cy="32" rx="24" ry="16" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 16 L32 48" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>云服务资源</h3>
+                    <p class="resource-desc">UOS云服务额度，支持云端开发与部署</p>
+                    <div class="resource-value">价值：¥30,000+</div>
+                    <button class="resource-btn">查看详情</button>
+                </div>
+
+                <div class="resource-card glass-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="resource-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                            <path d="M32 8 L32 16 M32 48 L32 56 M8 32 L16 32 M48 32 L56 32" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>技术支持</h3>
+                    <p class="resource-desc">专家1v1指导、技术文档、开发工具支持</p>
+                    <div class="resource-value">价值：¥20,000+</div>
+                    <button class="resource-btn">查看详情</button>
+                </div>
+
+                <div class="resource-card glass-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="resource-icon">
+                        <svg viewBox="0 0 64 64">
+                            <rect x="8" y="16" width="48" height="32" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="24" x2="56" y2="24" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="20" r="2" fill="currentColor"/>
+                            <circle cx="22" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>商业资源</h3>
+                    <p class="resource-desc">发行对接、投资人对接、商业化指导</p>
+                    <div class="resource-value">价值：¥100,000+</div>
+                    <button class="resource-btn">获取方式</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-bg">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">快速找到你需要的答案</p>
+            </div>
+
+            <div class="faq-categories">
+                <button class="faq-cat-btn active" data-category="all">全部</button>
+                <button class="faq-cat-btn" data-category="register">报名相关</button>
+                <button class="faq-cat-btn" data-category="submit">作品提交</button>
+                <button class="faq-cat-btn" data-category="tech">技术要求</button>
+                <button class="faq-cat-btn" data-category="review">评审规则</button>
+                <button class="faq-cat-btn" data-category="award">奖项设置</button>
+            </div>
+
+            <div class="faq-search">
+                <input type="text" class="faq-search-input" placeholder="搜索问题...">
+                <button class="faq-search-btn">🔍</button>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100" data-category="register">
+                    <div class="faq-question">
+                        <h4>个人可以参赛吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可以。个人和团队都可以参赛，团队人数建议1-5人。如果是个人参赛，也可以在报名时选择"个人参赛"选项。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200" data-category="register">
+                    <div class="faq-question">
+                        <h4>团队人数有限制吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>团队建议人数为1-5人，其中1人为队长。如团队人数超过5人，请联系组委会申请。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300" data-category="submit">
+                    <div class="faq-question">
+                        <h4>作品必须是新开发的吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>作品需要在本次大赛期间开发或进行重大更新。已有的作品也可以参赛，但需要在参赛期间进行优化和调整。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400" data-category="submit">
+                    <div class="faq-question">
+                        <h4>可以使用开源资源吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可以使用开源资源，但需要在作品中明确标注使用的开源资源及其来源。核心创意和主要内容由参赛者原创。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500" data-category="tech">
+                    <div class="faq-question">
+                        <h4>必须使用团结引擎吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>必须使用团结引擎进行开发，使用相关AI工具的作品可获得额外加分。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600" data-category="tech">
+                    <div class="faq-question">
+                        <h4>AI生成内容的比例有限制吗？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AI生成内容可以作为辅助工具使用，但核心创意、游戏设计、核心代码等需要由参赛者原创。需要在作品说明中明确标注AI使用情况。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700" data-category="review">
+                    <div class="faq-question">
+                        <h4>评审标准是什么？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>评审将从创意性（30%）、技术实现（25%）、完成度（20%）、AI应用（15%）、市场潜力（10%）五个维度进行综合评分。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="800" data-category="award">
+                    <div class="faq-question">
+                        <h4>作品版权归谁？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>作品知识产权归参赛者所有。大赛组委会拥有作品展示、宣传等非商业使用权。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact" data-aos="fade-up" data-aos-delay="900">
+                <h3>还有问题？</h3>
+                <p>如果以上问题没有解决你的疑问，欢迎联系我们</p>
+                <button class="contact-btn">提交咨询</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作生态 -->
+    <section class="partners" id="partners">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">合作生态</h2>
+                <p class="section-subtitle">携手行业伙伴，共建游戏开发生态</p>
+            </div>
+
+            <div class="partners-section">
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">指导单位</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-1.png" alt="中国音数协游戏工委" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">主办方</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-2.png" alt="Unity中国" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-3.png" alt="徐汇区文旅局" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="category-title">支持单位</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-4.png" alt="漕河泾开发区" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-5.png" alt="徐汇游戏产业服务中心" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="category-title">赞助企业</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-6.png" alt="腾讯" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-7.png" alt="华为" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-8.png" alt="字节跳动" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="category-title">生态合作伙伴</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-9.png" alt="VSAT" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-10.png" alt="Meshy" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-11.png" alt="Codely" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="category-title">合作媒体与社区</h3>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-12.png" alt="GAMELOOK" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-13.png" alt="VRPlay" class="partner-logo-img">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="assets/images/partner-14.png" alt="FounderPark" class="partner-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section class="showcase" id="showcase">
+        <div class="section-bg">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">往届作品展示</h2>
+                <p class="section-subtitle">优秀作品回顾，激发创作灵感</p>
+            </div>
+
+            <div class="showcase-filters">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="mini">小游戏</button>
+                <button class="filter-btn" data-filter="mobile">移动端</button>
+                <button class="filter-btn" data-filter="pc">PC端</button>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="100"
+                     data-name="VED:疗愈所"
+                     data-team="VED工作室"
+                     data-desc="一款治愈系冒险游戏，玩家将探索神秘的疗愈世界，解开各种谜题。"
+                     data-category-name="PC游戏"
+                     data-award="徐汇·金耀奖"
+                     data-video="">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>VED:疗愈所</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="200"
+                     data-name="窗策划模拟器"
+                     data-team="鹰出樊笼工作室"
+                     data-desc="一款模拟经营游戏，玩家将体验策划工作的日常与挑战。"
+                     data-category-name="PC端"
+                     data-award="徐汇·金耀奖"
+                     data-video="">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>窗策划模拟器</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC端</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mobile" data-aos="zoom-in" data-aos-delay="300"
+                     data-name="窗台上的蝴蝶"
+                     data-team="胖布丁游戏"
+                     data-desc="一款唯美治愈的解谜游戏，讲述关于成长与梦想的故事。"
+                     data-category-name="移动端"
+                     data-award="徐汇·金耀奖"
+                     data-video="">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>📱</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>窗台上的蝴蝶</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">移动端</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mini" data-aos="zoom-in" data-aos-delay="400"
+                     data-name="剑渊战纪"
+                     data-team="厦门梦域视界"
+                     data-desc="一款动作RPG游戏，玩家将踏上冒险之旅，挑战各种强大的敌人。"
+                     data-category-name="小游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>🎮</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>剑渊战纪</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">小游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="500"
+                     data-name="山海绘卷"
+                     data-team="青鸟工作室"
+                     data-desc="一款以山海经为背景的冒险游戏，玩家将探索神秘的山海世界。"
+                     data-category-name="PC游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>山海绘卷</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mobile" data-aos="zoom-in" data-aos-delay="600"
+                     data-name="星空旅人"
+                     data-team="星云工作室"
+                     data-desc="一款太空探索游戏，玩家将驾驶飞船探索浩瀚的宇宙。"
+                     data-category-name="移动端"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>📱</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>星空旅人</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">移动端</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mini" data-aos="zoom-in" data-aos-delay="700"
+                     data-name="像素冒险"
+                     data-team="像素工坊"
+                     data-desc="一款像素风格的冒险游戏，玩家将踏上充满惊喜的冒险之旅。"
+                     data-category-name="小游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>🎮</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>像素冒险</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">小游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="800"
+                     data-name="幻境迷宫"
+                     data-team="迷宫工作室"
+                     data-desc="一款迷宫解谜游戏，玩家将在幻境中寻找出口。"
+                     data-category-name="PC游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>幻境迷宫</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mobile" data-aos="zoom-in" data-aos-delay="900"
+                     data-name="萌宠乐园"
+                     data-team="萌宠工作室"
+                     data-desc="一款模拟经营游戏，玩家将经营自己的萌宠乐园。"
+                     data-category-name="移动端"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>📱</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>萌宠乐园</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">移动端</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mini" data-aos="zoom-in" data-aos-delay="1000"
+                     data-name="节奏大师"
+                     data-team="节奏工作室"
+                     data-desc="一款音乐节奏游戏，玩家将跟随音乐节拍完成挑战。"
+                     data-category-name="小游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>🎮</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>节奏大师</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">小游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="1100"
+                     data-name="星际争霸"
+                     data-team="星际工作室"
+                     data-desc="一款科幻策略游戏，玩家将指挥星际舰队征服宇宙。"
+                     data-category-name="PC游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>星际争霸</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mobile" data-aos="zoom-in" data-aos-delay="1200"
+                     data-name="美食大亨"
+                     data-team="美食工作室"
+                     data-desc="一款美食模拟经营游戏，玩家将成为美食大亨。"
+                     data-category-name="移动端"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>📱</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>美食大亨</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">移动端</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="mini" data-aos="zoom-in" data-aos-delay="1300"
+                     data-name="弹球大师"
+                     data-team="弹球工作室"
+                     data-desc="一款弹球游戏，玩家将挑战各种有趣的弹球关卡。"
+                     data-category-name="小游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>🎮</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>弹球大师</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">小游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card glass-card" data-category="pc" data-aos="zoom-in" data-aos-delay="1400"
+                     data-name="魔法学院"
+                     data-team="魔法工作室"
+                     data-desc="一款魔法题材的RPG游戏，玩家将进入魔法学院学习魔法。"
+                     data-category-name="PC游戏"
+                     data-award="徐汇·金耀奖">
+                    <div class="showcase-image">
+                        <div class="image-placeholder">
+                            <span>💻</span>
+                        </div>
+                        <div class="showcase-overlay"></div>
+                        <div class="showcase-info">
+                            <h4>魔法学院</h4>
+                            <p class="showcase-award">徐汇·金耀奖</p>
+                            <p class="showcase-category">PC游戏</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻动态 -->
+    <section class="news" id="news">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">新闻动态</h2>
+                <p class="section-subtitle">最新赛事资讯，掌握一手信息</p>
+            </div>
+
+            <div class="news-banner" id="newsBanner">
+                <div class="news-banner-container">
+                    <div class="news-banner-slide">
+                        <div class="news-banner-bg">
+                            <div class="image-placeholder">
+                                <span>📢</span>
+                            </div>
+                        </div>
+                        <div class="news-banner-content">
+                            <div class="news-meta">
+                                <span class="news-tag">赛事新闻</span>
+                                <span class="news-date">2026-08-01</span>
+                            </div>
+                            <h3>第二届Unity中国开发挑战赛正式启动</h3>
+                            <p>超百万奖金池，三大赛道等你来挑战！</p>
+                            <a href="#" class="news-link">阅读更多 →</a>
+                        </div>
+                    </div>
+
+                    <div class="news-banner-slide">
+                        <div class="news-banner-bg">
+                            <div class="image-placeholder">
+                                <span>📰</span>
+                            </div>
+                        </div>
+                        <div class="news-banner-content">
+                            <div class="news-meta">
+                                <span class="news-tag">媒体报道</span>
+                                <span class="news-date">2026-08-05</span>
+                            </div>
+                            <h3>多家媒体关注Unity开发挑战赛</h3>
+                            <p>业内专家看好AI与游戏开发的结合前景</p>
+                            <a href="#" class="news-link">阅读更多 →</a>
+                        </div>
+                    </div>
+
+                    <div class="news-banner-slide">
+                        <div class="news-banner-bg">
+                            <div class="image-placeholder">
+                                <span>🎉</span>
+                            </div>
+                        </div>
+                        <div class="news-banner-content">
+                            <div class="news-meta">
+                                <span class="news-tag">活动回顾</span>
+                                <span class="news-date">2026-07-20</span>
+                            </div>
+                            <h3>首届挑战赛颁奖典礼圆满落幕</h3>
+                            <p>回顾首届赛事精彩瞬间</p>
+                            <a href="#" class="news-link">阅读更多 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-banner-dots">
+                    <button class="news-banner-dot active" data-index="0"></button>
+                    <button class="news-banner-dot" data-index="1"></button>
+                    <button class="news-banner-dot" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 报名弹窗 -->
+    <div class="modal" id="registerModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>立即报名</h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm" class="register-form">
+                    <div class="form-group">
+                        <label for="teamName">团队名称 <span class="required">*</span></label>
+                        <input type="text" id="teamName" name="teamName" required placeholder="请输入团队名称">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="track">参赛赛道 <span class="required">*</span></label>
+                        <select id="track" name="track" required>
+                            <option value="">请选择赛道</option>
+                            <option value="mini">小游戏</option>
+                            <option value="mobile">移动端游戏</option>
+                            <option value="pc">PC端游戏</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="captainName">队长姓名 <span class="required">*</span></label>
+                        <input type="text" id="captainName" name="captainName" required placeholder="请输入真实姓名">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">手机号 <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="请输入手机号">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">邮箱 <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="请输入邮箱">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization">学校/公司 <span class="required">*</span></label>
+                        <input type="text" id="organization" name="organization" required placeholder="请输入所属单位">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workName">作品名称（非必填）</label>
+                        <input type="text" id="workName" name="workName" placeholder="报名时已有可填">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workIntro">作品简介（非必填）</label>
+                        <textarea id="workIntro" name="workIntro" rows="3" placeholder="200字以内"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span>我已阅读并同意<a href="#" class="link">《隐私协议》</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">提交报名</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品详情弹窗 -->
+    <div class="modal" id="workModal">
+        <div class="modal-overlay" onclick="closeWorkModal()"></div>
+        <div class="modal-content work-modal-content">
+            <div class="modal-header">
+                <h3 id="workModalTitle">作品详情</h3>
+                <button class="modal-close" onclick="closeWorkModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="work-detail">
+                    <div class="work-video">
+                        <video id="workVideo" controls style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                    <div class="work-info">
+                        <h4 id="workName">作品名称</h4>
+                        <p id="workTeam">团队名称</p>
+                        <p id="workDesc">作品描述</p>
+                        <div class="work-tags" id="workTags">
+                            <span class="tag">赛道标签</span>
+                            <span class="tag">获奖情况</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- 右侧悬浮窗 - 赛事交流群 -->
+    <div class="floating-widget" id="floatingWidget">
+        <div class="floating-widget-toggle" id="floatingWidgetToggle">
+            <span class="toggle-icon">💬</span>
+        </div>
+        <div class="floating-widget-content" id="floatingWidgetContent">
+            <div class="widget-header">
+                <h4>赛事交流群</h4>
+                <button class="widget-close" id="widgetClose">×</button>
+            </div>
+            <div class="widget-body">
+                <div class="widget-qr">
+                    <img src="assets/images/group-qr.png" alt="赛事交流群二维码" class="qr-code-img">
+                </div>
+                <div class="widget-info">
+                    <p class="group-number">QQ群号：<strong>123456789</strong></p>
+                    <p class="group-desc">扫码或搜索群号加入<br>获取最新赛事资讯</p>
+                </div>
+                <div class="widget-actions">
+                    <button class="widget-btn primary">复制群号</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- 引入自定义JS -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
