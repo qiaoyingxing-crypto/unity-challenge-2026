@@ -57,7 +57,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-family: 'Inter', 'Noto Sans CJK SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-white);
     line-height: 1.6;
@@ -278,7 +278,7 @@ section {
 }
 
 .hero-title {
-    font-family: 'PingFang SC', sans-serif;
+    font-family: 'Inter', 'Noto Sans CJK SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     font-size: 64px;
     font-weight: 900;
     line-height: 1.2;
@@ -802,7 +802,6 @@ section {
 
 /* ==================== 奖项设置 ==================== */
 .awards-pyramid {
-    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -811,7 +810,7 @@ section {
     backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 215, 0, 0.3);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     text-align: center;
     margin-bottom: var(--spacing-lg);
     box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
@@ -875,7 +874,8 @@ section {
 
 .awards-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-md);
 }
@@ -1102,55 +1102,89 @@ section {
 
 /* ==================== 合作生态 ==================== */
 .partners {
-    padding: var(--spacing-lg) 0 !important;
+    padding: var(--spacing-xxl) 0 !important;
 }
 
 .partners .section-header {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
 }
 
-.partners-section {
+/* 合作伙伴网格布局 */
+.partners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
 }
 
-.partner-category {
+/* 合作伙伴卡片 */
+.partner-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 242, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 255, 242, 0.15);
+}
+
+/* 卡片标题 */
+.partner-card-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-cyan);
+    margin: 0 0 var(--spacing-xs) 0;
     text-align: center;
 }
 
-.category-title {
-    font-size: 16px;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-white);
-    font-weight: 500;
+/* 卡片分隔线 */
+.partner-card-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-cyan), transparent);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.6;
 }
 
+/* Logo容器 */
 .partner-logos {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .partner-logo {
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    filter: grayscale(100%) brightness(1.2);
+    filter: grayscale(100%) invert(1) brightness(1.8) contrast(1.2);
     transition: all var(--transition-normal);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-sm);
-    padding: 4px;
+    padding: var(--spacing-sm);
 }
 
 .partner-logo:hover {
     filter: grayscale(0%) brightness(1);
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+    background: rgb(255, 255, 255);
+    border-color: rgba(0, 102, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.2);
 }
 
 .partner-logo-img {
@@ -1159,33 +1193,48 @@ section {
     object-fit: contain;
 }
 
+/* 白色logo卡片 - 直接反白 */
+.card-white .partner-logo {
+    filter: grayscale(100%) brightness(1) contrast(1.5) drop-shadow(0 0 0 transparent);
+}
+
+.card-white .partner-logo:hover {
+    filter: grayscale(0%) brightness(1) contrast(1);
+    transform: translateY(-3px);
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 102, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.2);
+}
+
+/* 平板端布局 */
+@media (max-width: 1024px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* 移动端布局 */
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .partner-card {
+        padding: var(--spacing-md);
+    }
+
+    .partner-card-title {
+        font-size: 16px;
+    }
+
+    .partner-logos {
+        gap: var(--spacing-sm);
+    }
+}
+
 /* ==================== 作品展示 ==================== */
-.showcase-filters {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-xl);
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: var(--spacing-xs) var(--spacing-lg);
-    background: transparent;
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    color: var(--text-gray);
-    font-size: 14px;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--gradient-blue);
-    color: var(--text-white);
-    border-color: transparent;
-}
-
 .showcase-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1221,6 +1270,17 @@ section {
 }
 
 .showcase-card:hover .image-placeholder {
+    transform: scale(1.05);
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.showcase-card:hover .showcase-img {
     transform: scale(1.05);
 }
 
@@ -1290,7 +1350,7 @@ section {
 /* ==================== 资源支持 ==================== */
 .resources-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-lg);
 }
 
@@ -1409,6 +1469,10 @@ section {
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
+}
+
+.faq-list.hidden {
+    display: none;
 }
 
 .faq-item {
@@ -2073,10 +2137,6 @@ section {
         left: calc(-1 * var(--spacing-lg) - 10px);
     }
 
-    .partners-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .news-banner-container {
         height: 350px;
     }
@@ -2086,6 +2146,10 @@ section {
     }
 
     .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -2120,6 +2184,23 @@ section {
         width: 60px;
         height: 1px;
     }
+
+    .partners-section {
+        gap: var(--spacing-md);
+    }
+
+    .partner-category {
+        padding: var(--spacing-md);
+    }
+
+    .category-title {
+        font-size: 16px;
+    }
+
+    .partner-logo {
+        width: 100px;
+        height: 50px;
+    }
     
     .section-title {
         font-size: 28px;
@@ -2138,10 +2219,6 @@ section {
     }
     
     .judges-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .partners-section {
         grid-template-columns: 1fr;
     }
 
@@ -2208,6 +2285,10 @@ section {
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -2234,10 +2315,6 @@ section {
     
     .section {
         padding: var(--spacing-xl) 0;
-    }
-
-    .partners-section {
-        grid-template-columns: 1fr;
     }
 
     .news-banner-container {

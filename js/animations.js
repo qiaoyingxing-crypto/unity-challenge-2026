@@ -354,43 +354,11 @@ class FilterSystem {
     }
     
     init() {
-        // 作品展示滤镜
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const showcaseCards = document.querySelectorAll('.showcase-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.dataset.filter;
-                
-                // 更新按钮状态
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // 过滤卡片
-                showcaseCards.forEach(card => {
-                    const category = card.dataset.category;
-                    
-                    if (filter === 'all' || category === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
         // FAQ分类滤镜
         const faqCatBtns = document.querySelectorAll('.faq-cat-btn');
         const faqItems = document.querySelectorAll('.faq-item');
-        
+        const faqList = document.querySelector('.faq-list');
+
         faqCatBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const category = btn.dataset.category;
@@ -399,11 +367,14 @@ class FilterSystem {
                 faqCatBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
+                // 显示问题列表
+                faqList.classList.remove('hidden');
+
                 // 过滤问题
                 faqItems.forEach(item => {
                     const itemCategory = item.dataset.category;
-                    
-                    if (category === 'all' || itemCategory === category) {
+
+                    if (itemCategory === category) {
                         item.style.display = 'block';
                     } else {
                         item.style.display = 'none';

@@ -188,7 +188,17 @@ if (faqSearchInput) {
     faqSearchInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase();
         const faqItems = document.querySelectorAll('.faq-item');
-        
+        const faqList = document.querySelector('.faq-list');
+
+        // 如果搜索框为空，隐藏问题列表
+        if (searchTerm === '') {
+            faqList.classList.add('hidden');
+            return;
+        }
+
+        // 显示问题列表
+        faqList.classList.remove('hidden');
+
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question h4').textContent.toLowerCase();
             const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
@@ -326,7 +336,7 @@ document.addEventListener('visibilitychange', () => {
 // ==================== 控制台欢迎信息 ====================
 
 console.log('%c第二届Unity中国开发挑战赛', 'color: #0066ff; font-size: 24px; font-weight: bold;');
-console.log('%c团结有AI，游我精彩', 'color: #00ffff; font-size: 16px;');
+console.log('%c团结游AI，智引未来', 'color: #00ffff; font-size: 16px;');
 console.log('%c🎮 欢迎访问赛事官网！', 'color: #ff00ff; font-size: 14px;');
 
 // ==================== 新闻轮播Banner ====================
