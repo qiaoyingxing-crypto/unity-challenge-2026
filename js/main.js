@@ -38,6 +38,11 @@ function showWorkModal(workData) {
         if (workData.video) {
             video.src = workData.video;
             video.style.display = 'block';
+            // 加载视频并自动播放
+            video.load();
+            video.play().catch(error => {
+                console.log('自动播放失败，可能需要用户交互:', error);
+            });
         } else {
             video.style.display = 'none';
         }

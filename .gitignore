@@ -13,3 +13,9 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Video files (too large for GitHub)
+assets/videos/
+*.mp4
+*.mov
+*.avi

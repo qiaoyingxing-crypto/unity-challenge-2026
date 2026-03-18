@@ -1606,6 +1606,17 @@ section {
     font-size: 80px;
 }
 
+.news-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.news-banner-slide:hover .news-banner-img {
+    transform: scale(1.05);
+}
+
 .news-banner-content {
     flex: 1;
     padding: var(--spacing-lg);
