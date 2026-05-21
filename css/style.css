@@ -801,6 +801,285 @@ section {
 }
 
 /* ==================== 奖项设置 ==================== */
+/* 奖项容器 */
+.awards-container {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 奖项行 */
+.awards-row {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 奖项网格 */
+.awards-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.awards-grid-three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.awards-grid-single {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* 保留旧的样式，但不再使用 */
+.awards-section {
+    display: block;
+    margin-bottom: var(--spacing-xl);
+}
+
+.track-section-title {
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-white);
+    text-align: center;
+}
+
+/* 奖项卡片 */
+.award-card {
+    padding: var(--spacing-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+}
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-blue);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.award-card:hover::before {
+    opacity: 1;
+}
+
+.award-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 102, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.2);
+}
+
+/* 奖项层级样式 */
+.award-tier-gold {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 165, 0, 0.08) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.35);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
+}
+
+.award-tier-gold::before {
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+}
+
+.award-tier-gold:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+}
+
+.award-tier-1 {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.06) 0%, rgba(255, 215, 0, 0.04) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.25);
+}
+
+.award-tier-1::before {
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+}
+
+.award-tier-2 {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.06) 0%, rgba(192, 192, 192, 0.04) 100%);
+    border: 2px solid rgba(192, 192, 192, 0.25);
+}
+
+.award-tier-2::before {
+    background: linear-gradient(90deg, #c0c0c0, #e8e8e8);
+}
+
+.award-tier-3 {
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.06) 0%, rgba(205, 127, 50, 0.04) 100%);
+    border: 2px solid rgba(205, 127, 50, 0.25);
+}
+
+.award-tier-3::before {
+    background: linear-gradient(90deg, #cd7f32, #daa520);
+}
+
+.award-special {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.06) 0%, rgba(153, 51, 255, 0.04) 100%);
+    border: 2px solid rgba(0, 102, 255, 0.15);
+}
+
+.award-platform {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.06) 0%, rgba(0, 102, 255, 0.04) 100%);
+    border: 2px solid rgba(0, 255, 255, 0.15);
+}
+
+.award-college {
+    background: linear-gradient(135deg, rgba(153, 51, 255, 0.06) 0%, rgba(255, 0, 255, 0.04) 100%);
+    border: 2px solid rgba(153, 51, 255, 0.15);
+}
+
+.award-merit {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(200, 200, 200, 0.04) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 奖项皇冠 */
+.award-crown {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 16px;
+    animation: crownGlow 2s ease-in-out infinite;
+}
+
+@keyframes crownGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
+        transform: scale(1.1);
+    }
+}
+
+/* 奖项图标 */
+.award-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 奖项层级图标 */
+.award-tier-icon {
+    font-size: 36px;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 奖项名称 */
+.award-name {
+    font-size: 14px;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-white);
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.award-tier-gold .award-name {
+    font-size: 16px;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
+}
+
+/* 奖项金额 */
+.award-prize {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.prize-amount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent-cyan);
+}
+
+.award-tier-gold .prize-amount {
+    color: #ffd700;
+    font-size: 26px;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.award-tier-1 .prize-amount {
+    color: #ffd700;
+}
+
+.award-tier-2 .prize-amount {
+    color: #c0c0c0;
+}
+
+.award-tier-3 .prize-amount {
+    color: #cd7f32;
+}
+
+.prize-count {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* 奖项描述 */
+.award-desc {
+    color: var(--text-gray);
+    font-size: 11px;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.3;
+}
+
+/* 奖项徽章 */
+.award-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.badge-gold {
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    color: #ffd700;
+}
+
+.badge-tech {
+    background: rgba(0, 102, 255, 0.15);
+    border: 1px solid rgba(0, 102, 255, 0.25);
+    color: var(--accent-cyan);
+}
+
+.badge-ai {
+    background: rgba(153, 51, 255, 0.15);
+    border: 1px solid rgba(153, 51, 255, 0.25);
+    color: var(--accent-pink);
+}
+
+.badge-platform {
+    background: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    color: var(--accent-cyan);
+}
+
+.badge-college {
+    background: rgba(153, 51, 255, 0.15);
+    border: 1px solid rgba(153, 51, 255, 0.25);
+    color: var(--accent-pink);
+}
+
+.badge-merit {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-white);
+}
+
+/* 旧版奖项样式（保留兼容性） */
 .awards-pyramid {
     margin: 0 auto;
 }
@@ -831,26 +1110,6 @@ section {
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
-.award-prize {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-xs);
-}
-
-.prize-amount {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
-    font-weight: 900;
-    color: #ffd700;
-}
-
-.prize-count {
-    font-size: 24px;
-    color: var(--text-gray);
-}
-
 .award-desc {
     color: var(--text-gray);
     margin-bottom: var(--spacing-md);
@@ -874,35 +1133,9 @@ section {
 
 .awards-row {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-md);
-}
-
-.award-card {
-    padding: var(--spacing-md);
-    text-align: center;
-}
-
-.award-icon {
-    font-size: 48px;
-    margin-bottom: var(--spacing-sm);
-}
-
-.award-card h4 {
-    font-size: 20px;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-white);
-}
-
-.award-card .prize-amount {
-    font-size: 32px;
-    color: var(--accent-cyan);
-}
-
-.award-card .prize-count {
-    font-size: 18px;
 }
 
 .award-track {
@@ -925,7 +1158,7 @@ section {
 
 .non-cash-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
 }
 
@@ -2105,23 +2338,23 @@ section {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .hero-stats {
         justify-content: center;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .hero-visual {
         display: none;
     }
-    
+
     .section-title {
         font-size: 36px;
     }
-    
+
     .tracks-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2131,18 +2364,18 @@ section {
         align-items: flex-start;
         padding-left: var(--spacing-lg);
     }
-    
+
     .timeline::before {
         left: 20px;
         width: 2px;
         height: calc(100% - var(--spacing-lg));
     }
-    
+
     .timeline-item {
         text-align: left;
         padding-left: var(--spacing-lg);
     }
-    
+
     .timeline-marker {
         position: absolute;
         left: calc(-1 * var(--spacing-lg) - 10px);
@@ -2163,34 +2396,48 @@ section {
     .resources-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .non-cash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 奖项设置响应式 */
+    .awards-grid-three {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .award-card {
+        min-height: 130px;
+    }
 }
 
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
     }
-    
+
     .mobile-menu-btn {
         display: flex;
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .hero-title {
         font-size: 36px;
     }
-    
+
     .hero-subtitle {
         font-size: 20px;
     }
-    
+
     .hero-stats {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .stat-divider {
         width: 60px;
         height: 1px;
@@ -2212,23 +2459,23 @@ section {
         width: 100px;
         height: 50px;
     }
-    
+
     .section-title {
         font-size: 28px;
     }
-    
+
     .overview-highlights {
         grid-template-columns: 1fr;
     }
-    
+
     .tracks-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .awards-row {
         grid-template-columns: 1fr;
     }
-    
+
     .judges-grid {
         grid-template-columns: 1fr;
     }
@@ -2257,11 +2504,11 @@ section {
     .news-banner-content p {
         font-size: 12px;
     }
-    
+
     .work-detail {
         grid-template-columns: 1fr;
     }
-    
+
     .back-to-top {
         bottom: var(--spacing-md);
         right: var(--spacing-md);
@@ -2300,30 +2547,87 @@ section {
     .resources-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .non-cash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 奖项设置移动端响应式 */
+    .track-section-title {
+        font-size: 18px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .awards-grid-three {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .awards-grid-single {
+        grid-template-columns: 1fr;
+    }
+
+    .award-card {
+        padding: var(--spacing-sm);
+        min-height: 120px;
+    }
+
+    .award-name {
+        font-size: 13px;
+    }
+
+    .prize-amount {
+        font-size: 18px;
+    }
+
+    .award-tier-gold .prize-amount {
+        font-size: 20px;
+    }
+
+    .prize-count {
+        font-size: 11px;
+    }
+
+    .award-icon {
+        font-size: 28px;
+    }
+
+    .award-tier-icon {
+        font-size: 32px;
+    }
+
+    .award-crown {
+        font-size: 14px;
+    }
+
+    .award-badge {
+        font-size: 8px;
+        padding: 2px 8px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
     }
-    
+
     .hero-subtitle {
         font-size: 16px;
     }
-    
+
     .stat-number {
         font-size: 36px;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .section {
         padding: var(--spacing-xl) 0;
     }
@@ -2338,5 +2642,65 @@ section {
 
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .non-cash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 奖项设置小屏幕响应式 */
+    .track-section-title {
+        font-size: 16px;
+    }
+
+    .awards-grid-three {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .award-card {
+        padding: var(--spacing-xs);
+        min-height: 100px;
+    }
+
+    .award-name {
+        font-size: 12px;
+    }
+
+    .prize-amount {
+        font-size: 16px;
+    }
+
+    .award-tier-gold .prize-amount {
+        font-size: 18px;
+    }
+
+    .prize-count {
+        font-size: 10px;
+    }
+
+    .award-icon {
+        font-size: 24px;
+    }
+
+    .award-tier-icon {
+        font-size: 28px;
+    }
+
+    .award-crown {
+        font-size: 12px;
+    }
+
+    .award-badge {
+        font-size: 7px;
+        padding: 2px 6px;
+    }
+
+    .award-desc {
+        font-size: 10px;
     }
 }

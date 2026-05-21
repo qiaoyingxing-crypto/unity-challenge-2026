@@ -85,8 +85,19 @@ function scrollToSection(sectionId) {
 
 // 下载赛事手册
 function downloadHandbook() {
-    // 模拟下载
-    alert('赛事手册下载功能即将上线！');
+    // PDF文件路径
+    const pdfPath = 'assets/2026 Unity中国开发挑战赛合作手册v2.pdf';
+
+    // 创建一个隐藏的a标签来触发下载
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.target = '_blank'; // 在新标签页中打开
+    link.download = '2026 Unity中国开发挑战赛合作手册v2.pdf'; // 下载时的文件名
+
+    // 触发点击
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 // ==================== 移动端菜单 ====================
