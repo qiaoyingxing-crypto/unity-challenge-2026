@@ -1160,6 +1160,8 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .non-cash-item {
@@ -2397,10 +2399,6 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .non-cash-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     /* 奖项设置响应式 */
     .awards-grid-three {
         grid-template-columns: repeat(3, 1fr);
@@ -2548,10 +2546,6 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .non-cash-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     /* 奖项设置移动端响应式 */
     .track-section-title {
         font-size: 18px;
@@ -2641,14 +2635,6 @@ section {
     }
 
     .showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .resources-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .non-cash-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
