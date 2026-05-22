@@ -1,11 +1,24 @@
 // ==================== 主要交互逻辑 ====================
 
+// ==================== 主要交互逻辑 ====================
+
+// 确认JavaScript文件已加载
+console.log('main.js 已加载');
+
 // 显示报名弹窗
 function showRegisterModal() {
-    const modal = document.getElementById('registerModal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    try {
+        const modal = document.getElementById('registerModal');
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            console.error('找不到报名弹窗元素');
+            alert('报名功能暂不可用，请稍后重试。');
+        }
+    } catch (error) {
+        console.error('显示报名弹窗失败:', error);
+        alert('报名功能暂不可用，请稍后重试。');
     }
 }
 
@@ -85,19 +98,24 @@ function scrollToSection(sectionId) {
 
 // 下载赛事手册
 function downloadHandbook() {
-    // PDF文件路径
-    const pdfPath = 'assets/2026 Unity中国开发挑战赛合作手册v2.pdf';
+    try {
+        // PDF文件路径
+        const pdfPath = 'assets/2026 Unity中国开发挑战赛合作手册v2.pdf';
 
-    // 创建一个隐藏的a标签来触发下载
-    const link = document.createElement('a');
-    link.href = pdfPath;
-    link.target = '_blank'; // 在新标签页中打开
-    link.download = '2026 Unity中国开发挑战赛合作手册v2.pdf'; // 下载时的文件名
+        // 创建一个隐藏的a标签来触发下载
+        const link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank'; // 在新标签页中打开
+        link.download = '2026 Unity中国开发挑战赛合作手册v2.pdf'; // 下载时的文件名
 
-    // 触发点击
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+        // 触发点击
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } catch (error) {
+        console.error('下载失败:', error);
+        alert('下载失败，请稍后重试或联系组委会。');
+    }
 }
 
 // ==================== 移动端菜单 ====================
@@ -436,12 +454,6 @@ class NewsBanner {
     }
 }
 
-// 初始化新闻轮播
-document.addEventListener('DOMContentLoaded', () => {
-    new NewsBanner();
-    initFloatingWidget();
-});
-
 // ==================== 悬浮窗交互 ====================
 
 function initFloatingWidget() {
@@ -491,3 +503,9 @@ function initFloatingWidget() {
         });
     });
 }
+
+// 初始化新闻轮播
+document.addEventListener('DOMContentLoaded', () => {
+    new NewsBanner();
+    initFloatingWidget();
+});

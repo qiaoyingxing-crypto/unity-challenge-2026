@@ -35,7 +35,7 @@
                 <li><a href="#resources" class="nav-link">资源支持</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
-            <button class="register-btn" onclick="showRegisterModal()">立即报名</button>
+            <button class="register-btn" type="button" onclick="showRegisterModal()">立即报名</button>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
                 <span></span>
@@ -87,11 +87,11 @@
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="showRegisterModal()">
+                        <button class="btn btn-primary" type="button" onclick="showRegisterModal()">
                             <span>立即报名</span>
                             <i class="btn-icon">→</i>
                         </button>
-                        <button class="btn btn-outline" onclick="downloadHandbook()">
+                        <button class="btn btn-outline" type="button" onclick="downloadHandbook()">
                             <span>下载赛事合作手册</span>
                             <i class="btn-icon">↓</i>
                         </button>
@@ -1481,6 +1481,27 @@
     <script src="js/particles.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- 测试脚本 -->
+    <script>
+        // 等待页面完全加载后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM已完全加载');
+            
+            // 测试函数是否可用
+            if (typeof showRegisterModal === 'function') {
+                console.log('showRegisterModal 函数可用');
+            } else {
+                console.error('showRegisterModal 函数不可用');
+            }
+            
+            if (typeof downloadHandbook === 'function') {
+                console.log('downloadHandbook 函数可用');
+            } else {
+                console.error('downloadHandbook 函数不可用');
+            }
+        });
+    </script>
 </body>
 </html>
 </html>
